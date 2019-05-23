@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <style type="text/css">
+            .body {
+                transform: scale(.5);
+            }
+            .result_cell_r_1, .result_cell_1 {
+                font-size: 9pt;
+                color: #000000;
+            }
+            .rcr1 {
+                height: 40px;
+                width: 30px;
+            }
+            .rc1 {
+                height: 40px;
+                 width: 120px;
+             }
+            .rc2 {
+                height: 40px;
+                width: 120px;
+            }
+            .rcr2 {
+                height: 40px;
+                width: 350px;
+            }
+            .rc3 {
+                height: 40px;
+                width: 80px;
+            }
+            .rcr3 {
+                height: 40px;
+                width: 50px;
+            }
+            .rcr4 {
+                height: 40px;
+                width: 80px;
+            }
+            .rcr5 {
+                height: 40px;
+                width: 60px;
+            }
+            .rcr6 {
+                height: 40px;
+                width: 380px;
+            }
+            .rcr7 {
+                height: 40px;
+                width: 380px;
+            }
+            .rcr8 {
+                height: 40px;
+                width: 380px;
+            }
+            .podsumowanie {
+                height: 50px;
+            }
+            .scale {
+                word-break: break-all;
+                text-align:center;
+            }
+            .footer {
+                bottom: 0;
+                position: absolute;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <center><h1>Zamówienie na produkty Henkel</h1></center>
+
+        <table style="width: 100%">
+            <tr height="30px">
+                <td>
+                    Nr zamówienia
+                </td>
+                <th>
+                        
+                </td>
+                <td>
+                
+                </td>
+                <td>
+                     Data zamówienia       
+                </td>
+                <td>
+                                
+                </td>
+                <td>
+                                     
+                </td>
+            </tr>
+
+            <tr height="30px">
+                <td>
+                    Dostawca
+                </td>
+                <th>
+                                
+                </td>
+                <td>
+                        
+                </td>
+                <td>
+                    Data dostawy       
+                </td>
+                <td>
+                                        
+                </td>
+                <td>
+                                             
+                </td>
+            </tr>
+
+                <tr height="30px">
+                    <td>
+                        Identyfikator klienta
+                    </td>
+                    <th>
+                                    
+                    </td>
+                    <td>
+                            
+                    </td>
+                    <td>
+                        Forma płatności     
+                    </td>
+                    <td>
+                                            
+                    </td>
+                    <td>
+                                                 
+                    </td>
+                </tr>
+
+                    <tr height="30px">
+                        <td>
+                            Identyfikator płatnika
+                        </td>
+                        <th>
+                                        
+                        </td>
+                        <td>
+                                
+                        </td>
+                        <td>
+                            Pracownik      
+                        </td>
+                        <td>
+                                                
+                        </td>
+                        <td>
+                                                     
+                        </td>
+                </tr>
+
+                    <tr height="30px">
+                            <td>
+                                Płatnik
+                            </td>
+                            <th>
+                                            
+                            </td>
+                            <td>
+                                    
+                            </td>
+                            <td>
+                                Typ zamówienia       
+                            </td>
+                            <td>
+                                                    
+                            </td>
+                            <td>
+                                                         
+                            </td>
+                        </tr>
+
+                            <tr height="30px">
+                                    <td>
+                                        Odbiorca
+                                    </td>
+                                    <th>
+                                                    
+                                    </td>
+                                    <td>
+                                            
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                                            
+                                    </td>
+                                    <td>
+                                                                 
+                                    </td>
+                                </tr>
+
+                                    <tr height="30px">
+                                        <td>
+                                            NIP
+                                        </td>
+                                        <th>
+                                                        
+                                        </td>
+                                        <td>
+                                                
+                                        </td>
+                                        <td>
+                                              
+                                        </td>
+                                        <td>
+                                                                
+                                        </td>
+                                        <td>
+                                                                     
+                                        </td>
+                                    </tr>
+
+                                        <tr height="30px">
+                                            <td>
+                                               Adres odbiorcy
+                                            </td>
+                                            <th>
+                                                            
+                                            </td>
+                                            <td>
+                                                    
+                                            </td>
+                                            <td>
+                                               
+                                            <td>
+                                                                    
+                                            </td>
+                                            <td>
+                                                                         
+                                            </td>
+                                        </tr>
+
+                                            <tr height="30px">
+                                                <td>
+                                                   Telefon odbiorcy
+                                                </td>
+                                                <th>
+                                                                
+                                                </td>
+                                                <td>
+                                                        
+                                                </td>
+                                                <td>
+                                                   
+                                                <td>
+                                                                        
+                                                </td>
+                                                <td>
+                                                                             
+                                                </td>
+                                            </tr>
+        </table><br>
+
+        <table class="scale" border="1" cellspacing="0" width="100%" align="left">
+                <tr>
+                    <td class="result_cell_r_1 rcr1">
+                        <b>L.p.</b>
+                    </td>
+                    <td class="result_cell_1 rc1">
+                        <b>ID Sprzedaży</b>
+                    </td>
+                    </td>
+                    <td class="result_cell_r_1 rcr2">
+                        <b>Nazwa</b>
+                    </td>
+                    <td class="result_cell_1 rc3">
+                        <b>Ilość</b>
+                    </td>
+                    <td class="result_cell_r_1 rcr3">
+                        <b>JM</b>
+                    </td>
+                    <td class="result_cell_r_1 rcr5">
+                        <b>Cena netto</b>
+                    </td>
+                    <td class="result_cell_1 rcr4">
+                        <b>Uwagi</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <td style="text-align:left">
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+            </table><br><br><br>
+
+            <table class="scale" border="1" cellspacing="0" width="36%" align="right">
+                    <tr>
+                        <th class="podsumowanie" colspan="2">Podsumowanie</th>
+                    </tr>
+                    <tr>
+                        <td class="result_cell_r_1 rcr6">
+                            <b>Ilość linii</b>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="result_cell_r_1 rcr8">
+                            <b>Suma zamówionych ilości</b>
+                        </td>
+                        <td>
+            
+                        </td>
+                    </tr>
+                        <td class="result_cell_r_1 rcr7">
+                            <b>Wartość zamówienia</b>
+                        </td>
+                        <td> 
+                        </td>
+                </table>
+
+        <div class="footer">
+            <b>Uwagi:</b><br /><br>
+            Koniec zamówienia:<br><br><br><br><br><br><br><br><br><br>
+        </div>
+
+    </body>
+
+</html>
