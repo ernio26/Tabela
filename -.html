@@ -26,7 +26,7 @@
             display: block;
         }
         .rcr1 {
-            width: 15px;
+            width: 30px;
         }
         .rc1 {
             width: 120px;
@@ -35,34 +35,34 @@
             width: 120px;
         }
         .rcr2 {
-            width: 300px;
+            width: 350px;
         }
         .rc3 {
-            width: 90px;
+            width: 80px;
         }
         .rcr3 {
-            width: 90px;
+            width: 100px;
         }
         .rcr4 {
-            width: 90px;
+            width: 80px;
         }
         .rcr5 {
-            width: 70px;
+            width: 60px;
         }
         .rcr6 {
-            width: 70px;
+            width: 380px;
         }
         .rcr7 {
-            width: 70px;
+            width: 380px;
         }
         .rcr8 {
-            width: 70px;
+            width: 380px;
         }
         .scale {
             word-break: break-all;
             text-align:center;
         }
-        
+
     </style>
 </head>
 <body>
@@ -160,63 +160,80 @@
         <b>Zamówione towary</b>
         <br />
     </div>
-    <table class="scale" border="1" cellspacing="0" width="99%" >
+    <table class="scale" border="1" cellspacing="0" width="68%" align="left">
         <tr>
             <td class="result_cell_r_1 rcr1">
                 <b>L.p.</b>
             </td>
             <td class="result_cell_1 rc1">
-                <b>Symbol</b>
+                <b>ID Sprzedaży</b>
             </td>
-            <td class="result_cell_1 rc2">
-                <b>EAN</b>
             </td>
             <td class="result_cell_r_1 rcr2">
                 <b>Nazwa</b>
             </td>
             <td class="result_cell_1 rc3">
-                <b>J.m.</b>
-            </td>
-            <td class="result_cell_r_1 rcr3">
                 <b>Ilość</b>
             </td>
-            <td class="result_cell_r_1 rcr4">
-                <b>Rabat[%]</b>
+            <td class="result_cell_r_1 rcr3">
+                <b>JM</b>
             </td>
             <td class="result_cell_r_1 rcr5">
-                <b>Cena jednostkowa netto</b>
+                <b>Cena netto</b>
             </td>
-            <td class="result_cell_r_1 rcr6">
-                <b>VAT</b>
-            </td>
-            <td class="result_cell_r_1 rcr7">
-                <b>Wartość netto</b>
-            </td>
-            <td class="result_cell_r_1 rcr8">
-                <b>Wartość brutto</b>
+            <td class="result_cell_1 rcr4">
+                <b>Uwagi</b>
             </td>
         </tr>
         <tbody>
         <tr th:each="detail : ${orderDetails}">
             <td th:text="${detail.position}"></td>
             <td th:text="${detail.productSymbol}"></td>
-            <td th:text="${detail.getBaseProduct().getProductEan()}"></td>
             <td th:text="${detail.productName}"></td>
-            <td th:text="${detail.getBaseProduct().getProductUnit()}"></td>
             <td align="right" th:text="${detail.quantity}"></td>
-            <td align="right" th:text="${detail.getDiscountPercent()}"></td>
+            <td th:text="${detail.getBaseProduct().getProductUnit()}"></td>
             <td align="right" th:text="${detail.getBaseProduct().getProductPrice()}"></td>
-            <td align="right" th:text="${detail.getVatPercent()}"></td>
-            <td align="right" th:text="${detail.getValue()}"></td>
-            <td align="right" th:text="${detail.getTotalValue()}"></td>
+            <td th:text="${detail.comments}"></td>
         </tr>
         </tbody>
         <tr>
-            <td colspan="9"></td>
+            <td></td>
             <td align="right"><span th:text="${order.getValue()}"></span></td>
             <td align="right"><span th:text="${order.getTotalValue()}"></span></td>
         </tr>
     </table>
+
+    <table class="scale" border="1" cellspacing="0" width="36%" allign="left">
+        <tr>
+            <th colspan="2">Podsumowanie</th>
+        </tr>
+        <tr>
+            <td class="result_cell_r_1 rcr6">
+                <b>Ilość linii</b>
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td class="result_cell_r_1 rcr8">
+                <b>Suma zamówionych ilości</b>
+            </td>
+            <td>
+
+            </td>
+        </tr>
+            <td class="result_cell_r_1 rcr7">
+                <b>Wartość zamówienia</b>
+            </td>
+            <td align="right" th:text="${detail.getTotalValue()}">
+                
+            </td>
+        <tr>
+
+        </tr>
+    </table>
+    
     <table width="100%" border="0" cellspacing="5" cellpadding="4">
         <tr>
             <td width="100%" class="inform_cell">
@@ -236,5 +253,8 @@
     </table>
     <span class="footer">Zamówienie wysłane z systemu 4mPower - <a href='http://softline.com.pl'>softline.com.pl</a></span>
 </center>
+
+<td align="right" th:text="${detail.getTotalValue()}"></td>
+
 </body>
 </html>
